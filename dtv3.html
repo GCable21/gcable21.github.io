@@ -133,7 +133,7 @@
     } else if (id == 1157) {//Latina TV Peru (X)
         keyId = "174f5f2ee8193624bec9dd8e5d507a64";
         key = "8ea131613f968b9c2b07d2d08ce5ef44";
-    } else if (id == 1011) {//America TV Peru (X)
+    } else if (id == 1011) {//America TV Peru 
         keyId = "b9fc5a15382b35818904ecbeed545fd0";
         key = "8b4d83e2c382780ca615ce6cd6754d79";
     } else if (id == 1016) {//ATV Peru (X)
@@ -385,6 +385,8 @@
             id == 1069
         )
             letter = "c";
+        else if (id == 0095 || id == 0079)
+                letter = 'j';
         else letter = "a";
 
         url = "https://dtvott-" + letter + "bc.akamaized.net/dash_live_" + id;
