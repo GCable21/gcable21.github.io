@@ -4,10 +4,11 @@ body {
    padding: 0;
 }
 </style>
-<meta name="referrer" content="no-referrer">
+
 <script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
 <script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
 </script>
+
 <script type="text/javascript">
 function getParameterByName(name) {
 	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
@@ -22,18 +23,15 @@ if (id == "#") {alert('Vuelve a la pÃ¡gina anterior');}
 
 <div id="player"></div>
 <script>
-if (id == 1057)
-{
+if (id == 1057) {// DirecTV Sports Perú
         keyId = "a7e09c6f47af57e999b789eb54d3255d";
         key = "263f6db12d6f9aa72f2cc9b0ef2e26b2";
 }
-else if (id == 1061)
-{
+else if (id == 1061) {// DirecTV Sports Argentina
         keyId = "7119069b99015b4eb9ee4300577399e2";
         key = "b89827cc970cd78da882ffca3504c774";
 }
-else if (id == 1069)
-{
+else if (id == 1069) {// DirecTV Eventos 616-618
         keyId = "a8cf52be0eb358c9a8bfcd1fc94d7cb5";
         key = "834c7082d28d85f5da38dde949b66c9a";
 }
@@ -601,14 +599,13 @@ else if (id == 1009)
 }
 else
 {
-	if (id == 1122 || id == 1123 || id == 1124 || id == 1027 || id == 1211 || id == 1053 || id == 1091 || id == 1223 || id == 1144 || id == 1190 || id == 1081 || id == 1147 || id == 1012 || id == 1181 || id == 1076 || id == 1074 || id == 1148 || id == 1248 || id == 1045 || id == 1101 || id == 1107 || id == 1100 || id == 1115 || id == 1060 || id == 1069)
+	if 	(id == 1122 || id == 1123 || id == 1124 || id == 1027 || id == 1211 || id == 1053 || id == 1091 || id == 1223 || id == 1144 || id == 1190 || id == 1081 || id == 1147 || id == 1012 || id == 1181 || id == 1076 || id == 1074 || id == 1148 || id == 1248 || id == 1045 || id == 1101 || id == 1107 || id == 1100 || id == 1115 || id == 1060 || id == 1069)
 		letter = 'c';
 	else if (id == 0095 || id == 0079)
-                letter = 'j';
-	else
-		letter = 'a';
+		letter = 'j';
+	else	letter = 'a';
 		
-	url = 'https://dtvott-'+letter+'bc.akamaized.net/dash_live_'+id;
+	url = 'https://dtvott-' +letter+ 'bc.akamaized.net/dash_live_' +id;
 }
 
 var playerInstance = jwplayer("player");
