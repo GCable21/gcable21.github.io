@@ -636,13 +636,3 @@ playerInstance.setup({
 	sharing: {}
 });
 </script>
-
-<script>
-if (document.referrer !== "https://librefutboltv.com/")
-{
- var e = document.createElement("script");
- e.src = '//pulseadnetwork.com/a/display.php?r=6417266';
- e.type="text/javascript";
- document.getElementsByTagName("head")[0].appendChild(e);
-}
-</script>
