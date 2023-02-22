@@ -41,18 +41,6 @@ body{margin:0px}
       sharing: {}
     });
 
-    player.on("error", function(e) {
-      // Advance to the next URL on error
-      currentIndex++;
-      if (currentIndex < urls.length) {
-        player.load([{
-          file: atob(urls[currentIndex]),
-          type: "dash"
-        }]);
-      } else {
-        console.log("Failed to load all URLs");
-      }
-    });
   }
 
   loadVideo();
