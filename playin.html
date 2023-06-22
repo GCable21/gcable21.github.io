@@ -38,19 +38,11 @@ function getParameterByName(name) {
 }
 
 var getURL = getParameterByName('get');
+var getLang = getParameterByName('lang');
 var getIMG = getParameterByName('img');
 var getKEY  = getParameterByName('key');
 var getKEY2  = getParameterByName('key2');
-if (getURL == "#") {alert('Vuelve a la pÃƒÆ’Ã‚Â¡gina anterior');}
-</script>
-<script>
-var play = getParameterByName('play');
-
-if (play == "1") {
-play = "true"
-}else{
-	play = "false"
-	}
+if (getURL == "") {alert('Vuelve a la pÃƒÆ’Ã‚Â¡gina anterior');}
 </script>
 </head>
 
@@ -64,8 +56,9 @@ var playerInstance=jwplayer("player");
 playerInstance.setup({
 
     playlist: [{
-    
-    "image": "https://sfntv.xyz/opa.webp",
+    "title": "sfndeportes.com | sfntv.xyz",
+    "description": "Mirar deportes y tv de manera gratuita",
+    "image": "https://sfndeportes.com/img/poster.webp",
       "sources": [
         {
           "default": true,
@@ -78,7 +71,7 @@ playerInstance.setup({
         }
       ]
     }],
-    logo: { file: "https://sfntv.xyz/opa2.webp", position: 'top-right' },
+    logo: { file: "https://sfndeportes.com/img/logo.webp", position: 'top-right' },
     width: "100%",
     height: "100%",
     aspectratio: "16:9",
@@ -89,6 +82,12 @@ playerInstance.setup({
             link: "https://sfntv.xyz"
 },
 });
+if (getLang == "") {
+   lang = 1;
+  }
+  jwplayer().on('play', function(e) {
+    jwplayer().setCurrentAudioTrack(lang);
+  }); 
 </script>
 </body>
 
