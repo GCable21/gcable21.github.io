@@ -710,7 +710,7 @@ if (id == 1125 || id == 1240 || id == 1118 || id == 1103 || id == 1246 || id == 
 }
 else if (id == 1251 || id == 1040 || id == 1035)
 {
-        url = 'https:///dtvott-akaws.akamaized.net/live_'+id+'/DASH';
+        url = '///dtvott-akaws.akamaized.net/live_'+id+'/DASH';
 }
 else if (id == 1095 || id == 1264 || id == "0054")
 {
@@ -734,7 +734,7 @@ else
 	else
 		letter = 'a';
 		
-	url = 'https://dtvott-'+letter+'bc.akamaized.net/dash_live_'+id;
+	url = '//dtvott-'+letter+'bc.akamaized.net/dash_live_'+id;
 }
 
 var playerInstance = jwplayer("player");
@@ -756,7 +756,7 @@ playerInstance.setup({
 	width: "100%",
 	height: "100%",
 	aspectratio: "16:9",
-	autostart: false,
+	autostart: true,
 	cast: {},
 	sharing: {}
 });
