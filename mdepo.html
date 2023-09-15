@@ -13,6 +13,9 @@ function getParameterByName(name) {
 }
 
 var url = getParameterByName('url');
+var k1 = getParameterByName('k1');
+var k2 = getParameterByName('k2');
+
 if (id == "#") {alert('Vuelve a la pÃ¡gina anterior');}
 var getLang = getParameterByName('lang');
 </script>
@@ -23,6 +26,6 @@ if (getLang)
 else
 	lang = "";
 
-document.write('<iframe allow="encrypted-media" src="https://dumper-true.com/dashdumper.php?url='+url+lang+'" width="100%" height="100%" scrolling="no" frameBorder="0" allowfullscreen></iframe>');
+document.write('<iframe allow="encrypted-media" src="https://dumper-true.com/dashdumper.php?url='+url+'&k1='+k1'&k2='+k2+'" width="100%" height="100%" scrolling="no" frameBorder="0" allowfullscreen></iframe>');
 </script>
 
