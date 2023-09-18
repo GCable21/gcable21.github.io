@@ -632,7 +632,7 @@ img[src="/img/logo-starplus.png"]:hover::before {
 
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <body oncontextmenu="return false;">
+   <body oncontextmenu="return false;">
     <body class="dark-mode container">
       
        <div class="w3-main w3-content w3-padding" style="max-width:1300px;margin-top:90px">
@@ -641,8 +641,8 @@ img[src="/img/logo-starplus.png"]:hover::before {
                 <div class="pageTitle">
                     <div class="left">
                     </div>
-                    <a href="/"><img src="https://i.ibb.co/p0G8fcz/STARRA.png" alt="Futbol  Tv"
-                            style="width:180px;height:30px;"></a>
+                    <a href="/"><img src="https://lh3.googleusercontent.com/--d9xny8T7jM/ZN2FTKkakoI/AAAAAAAAAqs/aL8RKglrZyQ2hQxM3B3ggwoH73daH-sSwCNcBGAsYHQ/h156/Picsart_23-08-16_22-42-30-837.png" alt="Futbol  Tv"
+                            style="width:180px;height:40px;"></a>
                 </div>
             </div>
          
@@ -651,59 +651,56 @@ img[src="/img/logo-starplus.png"]:hover::before {
                 <h2>Elige el evento:</h2>
             </center>
             <h6>Click en la opción para ver el partido..</h6>
-           <script>
-function eventos()
-{
-	var x = Math.random().toString(36).substring(7);
+<script>
+function eventos() {
+                    var x = Math.random().toString(36).substring(7);
 
-	$.ajax({
-		url : "https://gcable21.github.io/star-plus/eventos.json?"+x,
-		type : "get",
-		success: function (arr) {
-			var content = '';
-			
-			for (var i = 0; i < arr.length; i++)
-			{
-				if (i%4==0)
-				{
-					if (i != 0)
-						content += '</div>';
-					
-					content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
-				}
-					
-				var obj = arr[i];
-		
-				if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
-					status = obj['status'];
-				else
-					status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-			
-				if (status == "EN VIVO")
-					color = "danger";
-				else
-					color = "dark";
-					
-				content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
-				
-				if (i == arr.length-1)
-					content += '</div>';
-			}
-			
-			$("#eventos").html(content);
-			
-			guardaHorario();
-			dT();
-		}
-	})
-}
+                    $.ajax({
+                        url: "https://corsproxy.io/?url=https://futbolplaytvhd.com/famustv.com.json?" + x,
+                        type: "get",
+                        success: function (arr) {
+                            var content = '';
+                            for (var i = 0; i < arr.length; i++) {
+                                var obj = arr[i];
+                                url = obj['url'];
+                                if (url !== "#") {
+                                    let nurl =  url.replace("/embed/eventos/?r=", "");
+                                    nurl = atob(nurl);
+                                    let wurl = nurl.replace("//futbolplaytvhd.com/eventos.html?r=", "");
+                                    wurl = "//tudeportetv.com/reproductorstar+.html?get=" + wurl;
+                                    let furl = btoa(wurl);
+                                     console.log(furl);
+                                    //console.log('Link está listo: ' + furl);
+                                    // Concatenamos link ya tratado
+                                    url = "//tudeportetv.com/eventos.html?r=" + furl;
+                                } else {
+                                    //console.log('Link no está listo: ' + url);
+                                }
+                                status = obj['status'];
+                                if (status == "EN VIVO") {    
+                                 hora = '<button type="button" class="btn btn-danger me-1 mb-1">EN VIVO</button>';
+                                 
+                                } else if (status == "FINALIZADO") {
+                                    hora = '<button type="button" class="btn btn-white me-1 mb-1">FINALIZADO</button>';
+                                } else {
+                                    hora = '<button type="button" class="btn btn-white me-1 mb-1">HOY | <span class="t">' + status + '</span> hs</button>';
+                                }
+                                //console.log(status);
+                                content += '<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="' + url + '"><div class="card"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" class="card-img-top" alt="image" /><div class="card-body">' + hora + '<h3>' + obj['title'] + '</h3><h5 class="card-subtitle">' + obj['league'] + '</h5></div></div></a></div></div>';
+                            }
+                            $("#eventos").html(content);
+                            guardaHorario();
+                            dT();
+                        }
+                    })
+                }
 
-eventos();
-
-window.setInterval(function() {
-	eventos();
-}, 60000);
-</script>
+                eventos();
+ 
+                window.setInterval(function () {
+                    eventos();
+                }, 60000);
+            </script>
             <div class="row" id="eventos"></div>
             <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=641f722cfbfd84001b9fbfe8&product=inline-share-buttons&source=platform" async="async"></script>
         </div>
@@ -713,9 +710,9 @@ window.setInterval(function() {
     <center>
         <center>
             <hr>
-            <h5> FUTBOL PLAY TV HD 2023 &copy; Todos los derechos reservados.</h5>
-            <button class="anuncio-dmca"><a href="https://t.me/famushd">TELEGRAM</a></button>
-      <button class="anuncio-dmca"><a href="https://t.me/thanderrr">CONTACTO</a></button></i></a>
+            <h5> TUDEPORTE 2023 &copy; Todos los derechos reservados.</h5>
+            <button class="anuncio-dmca"><a href="https://t.me/+UkhfKqXM5exjNjFh">TELEGRAM</a></button>
+      <button class="anuncio-dmca"><a href="https://t.me/+UkhfKqXM5exjNjFh">CONTACTO</a></button></i></a>
             </a>
         </center>
            
@@ -723,5 +720,3 @@ window.setInterval(function() {
                     </div>
                 </div>
             </footer>
-
-
