@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+    <meta name="robots" content="noindex" />
+    <script data-cfasync="false" src="//acacdn.com/script/suv4.js" data-adel="lwsu" cdnd="acacdn.com" zid="7285662"></script>
+    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        #player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            border: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="player"></div>
+    <script>
+        var playerInstance = jwplayer("player");
+        playerInstance.setup({
+            playlist: [{
+                sources: [{
+                    default: false,
+                    type: "dash",
+                    file: "",
+
+                    drm: {
+                        clearkey: {
+                            keyId: "",
+                            key: ""
+                        }
+                    },
+                }],
+                label: "0",
+            }],
+            width: "100%",
+            height: "100%",
+            aspectratio: "16:9",
+            autostart: true,
+            cast: {},
+            withCredentials: false,
+            sharing: false
+        });
+    </script>
+</body>
+
+</html>
